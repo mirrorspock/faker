@@ -4,13 +4,13 @@ class TestFakerStarTrek < Test::Unit::TestCase
   def setup
     @equipment_collection = Faker::StarTrek.equipment_collection
     @ship_classes = Faker::StarTrek.ship_classes
+    @species_collection = Faker::StarTrek.species_collection
+    @technobabbles = Faker::StarTrek.technobabbles
     @weapon_types = Faker::StarTrek.weapon_types
     # @characters = Faker::StarTrek.characters
     # @planets = Faker::StarTrek.planets
-    # @species = Faker::StarTrek.species
     # @vehicles = Faker::StarTrek.vehicles
     # @quotes = Faker::StarTrek.quotes
-    # @technobabble = Faker::StarTrek.technobabble
   end
 
   def test_strings
@@ -18,9 +18,15 @@ class TestFakerStarTrek < Test::Unit::TestCase
     #     @characters.each do |character|
     #        refute character.to_s.empty?
     #     end
+    
     assert @equipment_collection.size == 41
     @equipment_collection.each do |equipment|
        refute equipment.to_s.empty?
+    end
+
+    assert @technobabbles.size == 4
+    @technobabbles.each do |technobabble|
+       refute technobabble.to_s.empty?
     end
 
     assert @ship_classes.size == 15
@@ -28,14 +34,15 @@ class TestFakerStarTrek < Test::Unit::TestCase
        refute ship_class.to_s.empty?
     end
 
+    assert @species_collection.size == 50
+    @species_collection.each do |species|
+       refute species.to_s.empty?
+    end
+
     assert @weapon_types.size == 4
     @weapon_types.each do |weapon_type|
        refute weapon_type.to_s.empty?
     end
-
-
-
-
     #
     #     assert @planets.size == 20
     #     @planets.each do |planet|
@@ -74,6 +81,10 @@ class TestFakerStarTrek < Test::Unit::TestCase
 
   def test_ship_class
     assert Faker::StarTrek.ship_class.match(/\w+/)
+  end
+
+  def test_species
+    assert Faker::StarTrek.species.match(/\w+/)
   end
 
   def test_weapon_type

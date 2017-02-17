@@ -9,6 +9,10 @@ module Faker
         ship_classes.sample
       end
 
+      def species
+        species_collection.sample
+      end
+
       def weapon_type
         weapon_types.sample
       end
@@ -21,13 +25,10 @@ module Faker
         planets.sample
       end
 
-      def quote
-        quotes.sample
+      def technobabble
+        technobabbles.sample
       end
 
-      def specie
-        species.sample
-      end
 
       def starships
         []
@@ -47,6 +48,15 @@ module Faker
       def ship_classes
         ['supply ship', 'cruiser', 'patrol ship', 'colony ship', 'fighter', 'cargo ship', 'dreadnaught', 'escort', 'freighter', 'garbage scow', 'shuttle', 'starship', 'transport', 'warship', 'research vessel']
       end
+
+      def species_collection
+        ['Acamarians','Akritirians','Aldeans','Andorians','Androids','Aquans','Ardanans','Augments',"Ba'ku",'Bajorans',
+          'Betazoids','Bolians','Borg','Brunali','Capellans','Cardassians','Changelings','Denobulans','Enarans',
+          'Ferengi','Holograms','Humans','Ilari','Iotians',"Jem'Hadar" 'Kazon','Klingons','Kriosians','Malcorians',
+          'Mari','Markalians','Mintakans','Ocampa','Organians','Orions','Platonians','Qomar','Romulans','Suliban',
+          'Talaxians','Tellarites','Teplans','Trill','Vhnori','Vidiians','Vori','Vorta','Vulcans','Xindi','Yaderans',
+          'Yridians']
+      end
       
       def weapon_types
         ['phaser', 'disruptor', 'plasma', 'polaron']
@@ -60,19 +70,13 @@ module Faker
         []
       end
 
-      def quotes
-        []
+      def technobabbles
+        ["The Enterprise computer system is controlled by three primary main processing cores cross linked with a redundant melacortz ramistat and fourteen kiloquad interface modules. The core elements are based on FTL nanoprocessor units arranged into twenty-five bilateral kelilactirals with twenty of those units being slaved to the central heisenfram terminal", 
+          "synchronising the transporter's annular confinement beam to the warp core frequency",
+          "My brother's positronic brain has a type L phase discriminating amplifier. Mine is a type R.",
+          "The temporal surge we detected was caused by an explosion of a microscopic singularity passing through this solar system. Somehow, the energy emitted by the singularity shifted the chroniton particles in our hull into a high state of temporal polarisation.",
+        ]
       end
-      
-      def species
-        ['Acamarians','Akritirians','Aldeans','Andorians','Androids','Aquans','Ardanans','Augments',"Ba'ku",'Bajorans',
-          'Betazoids','Bolians','Borg','Brunali','Capellans','Cardassians','Changelings','Denobulans','Enarans',
-          'Ferengi','Holograms','Humans','Ilari','Iotians',"Jem'Hadar" 'Kazon','Klingons','Kriosians','Malcorians',
-          'Mari','Markalians','Mintakans','Ocampa','Organians','Orions','Platonians','Qomar','Romulans','Suliban',
-          'Talaxians','Tellarites','Teplans','Trill','Vhnori','Vidiians','Vori','Vorta','Vulcans','Xindi','Yaderans',
-          'Yridians']
-      end
-
     end
   end
 end
